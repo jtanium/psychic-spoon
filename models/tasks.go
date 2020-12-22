@@ -10,7 +10,7 @@ type Task struct {
 type TaskCollection []Task
 
 func GetTasks(db *sql.DB) TaskCollection {
-	s := "SELECT * FROM tasks"
+	s := "SELECT id, name FROM tasks"
 	rows, err := db.Query(s)
 	if err != nil {
 		panic(err)
